@@ -1,0 +1,109 @@
+@import "header.css";
+@import "footer.css";
+
+/* enables tailwind base classes */
+@tailwind base;
+
+/* enables tailwind component-based classes */
+@tailwind components;
+
+/* enables tailwind utilities classes */
+@tailwind utilities;
+
+html {
+    background: url("../images/background-image01_1680x2000.jpeg") no-repeat center center fixed;
+    @apply bg-cover;
+}
+
+/* COMMON */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+a {
+    color: inherit;
+}
+
+/* main */
+.wrapper {
+    @apply bg-white;
+    @apply px-16 py-20;
+    /*padding: 16px 24px 0;*/
+}
+.main-headline {
+    @apply font-black text-4xl;
+}
+.main-text,
+.second-text {
+    @apply text-gray-700;
+}
+.back-to-index {
+    @appply text-gray-600;
+}
+
+/* INDEX page */
+.wrapper.home {
+
+}
+.main-headline.home {
+
+}
+.main-text.home {
+
+}
+.second-text.home {
+
+}
+
+/* ABOUT ME page */
+.wrapper.about-me {
+
+}
+.main-headline.about-me {
+
+}
+.main-text.about-me {
+
+}
+.second-text.about-me {
+
+}
+
+/* BLOG page */
+.wrapper.blog {
+
+}
+.main-headline.blog {
+
+}
+.main-text.blog {
+
+}
+.second-text.blog {
+
+}
+
+.wrapper.error {
+
+}
+.main-headline.error {
+
+}
+.main-text.error {
+
+}
+.second-text.error {
+
+}
+
+/* test */
+@screen tablet {
+    .wrapper {
+        margin: 56px 128px 0;
+        padding: 16px 24px;
+    }
+    .main-headline {
+        @apply text-black text-4xl;
+    }
+}

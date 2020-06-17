@@ -1,0 +1,7 @@
+/* footer */
+.footer-wrapper {
+    @apply bg-gray-500;
+}
+.footer-link {
+    @apply bg-gray-200;
+}

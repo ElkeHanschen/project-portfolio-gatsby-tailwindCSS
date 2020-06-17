@@ -1,99 +1,107 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
+    <img src="src/images/avatar_elle.jpeg" alt="Avatar Elle" height="100" width="100"/>
 </p>
+
 <h1 align="center">
-  Gatsby's default starter
+  Elle's Portfolio - WiP
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+This project is my portfolio site.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+_It is built from scratch - no previous content or concept, no previous website._
 
-## 🚀 Quick start
+_The project is based on [Gatsby](https://www.gatsbyjs.org/docs/) and [tailwindcss](https://tailwindcss.com/)._
 
-1.  **Create a Gatsby site.**
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+## How to install Gatsby?
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+There's actually two ways as there are two "starter packs".  
+The very simple one: [Gatsby Hello World Repository](https://github.com/gatsbyjs/gatsby-starter-hello-world)  
+A more elaborate one: [Gatsby Starter Default Repository](https://github.com/gatsbyjs/gatsby-starter-default)  
+
+My Project is based on the more elaborate "Starter Default" one, as this one brings a bit more content out of the box.
+
+- `cd` into your preferred local directory and run `gatsby new YOUR-PROJECT-NAME https://github.com/gatsbyjs/gatsby-starter-default`
+- `cd` into your new site directory, `cd YOUR-PROJECT-NAME`
+- run `gatsby develop` 
+    - this will start up your gatsby-site in development mode
+- your site is now running at `http://localhost:8000/`
+- gatsby also provides a second link: `http://localhost:8000/___graphql` 
+    - this site can be used to experiment with querying data
+- run `gatsby build` to create a production ready build
+    - this will create a production ready version of the site
+    - this will output all of the static HTML that you would put on your server, production ready JavaScript and CSS bundles
+- once the site is built, run (or actually serve) `gatsby serve`  
+-  run `gatsby clean` to clean the cache  
+- please also see [Gatsby cheat sheet](https://www.gatsbyjs.org/docs/cheat-sheet/)
+
+## Add tailwindcss
+- install tailwindcss as devDependency, run `npm install tailwindcss --save-dev`  
+- add a tailwindcss configuration file, run `npx tailwind init` 
+    - this will create the (optional) `tailwind.config.js`  
+    - you can now add customized styling via `tailwind.config.js` to add on top of tailwindcss styling  
+
+## Add the Gatsby PostCSS plugin   
+- install the Gatsby PostCSS plugin gatsby-plugin-postcss, run `npm install --save gatsby-plugin-postcss`  
+- include the Gatsby PostCSS plugin in your `gatsby-config.js` file like follows:  
     ```
-
-1.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-default-starter/
-    gatsby develop
+    plugins: [
+        `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-postcss`,
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: `${__dirname}/src/images`,
+        },
+        ...
+    ]
+    ```  
+## Configure Gatsby PostCSS to use tailwindcss  
+- create a `postcss.config.js` in your project's root folder  
+- run `npm install postcss-import` (plugin for handling `@import` statements with PostCSS)  
+- run `npm install autoprefixer` (tailwind doesn't automatically add vendor prefixes, it's recommended to use autoprefixer)  
+- put this into the `postcss.config.js`
     ```
+        module.exports = {
+          plugins: [
+            require('postcss-import'),
+            require('tailwindcss'),
+            require('autoprefixer'),
+          ]
+        }
+    ```  
 
-1.  **Open the source code and start editing!**
+- check `http://localhost:8000/` your project should still run, without building the files again  
 
-    Your site is now running at `http://localhost:8000`!
+#### Tip
+- use `npx tailwind init tailwind-full.config.js --full` to take a look at the full blown content of the config file  
+- __do *NOT* add your custom changes to that specific file!__  
+- add that file to your `.gitignore`!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+## See more information about how to get tailwindcss into Gatsby here:
+[tailwindcss in Gatsby](https://www.gatsbyjs.org/docs/tailwind-css/)
+  
+## Add Purgecss to your project - **DID NOT WORK** - WiP  
+- `npm install gatsby-plugin- purgecss`
+- add gatsby-plugin-purgecss to your `gatsby-config.js`
+- [Purgecss on npm](https://www.npmjs.com/package/purgecss)  
+- [Purgecss](https://www.purgecss.com/)  
+- [Purgecss on TailwindCSS video tutorial](https://tailwindcss.com/course/optimizing-for-production)
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+## See more Gatsby commands here:
+[Gatsby commands](https://www.gatsbyjs.org/docs/gatsby-cli/)
 
-## 🧐 What's inside?
+## See more information about Gatsby here:
+[Gatsby](https://www.gatsbyjs.org/)  
+[Gatsby Tutorial](https://www.gatsbyjs.org/tutorial/)  
+[Gatsby Documentation](https://www.gatsbyjs.org/docs/)  
+[Gatsby example projects](https://www.gatsbyjs.org/starters/?v=2)  
+[Gatsby on npm](https://www.npmjs.com/package/gatsby)
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+## See more information about tailwindcss here:
+[tailwindcss](https://tailwindcss.com/)  
+[tailwindcss screencasts](https://tailwindcss.com/screencasts/)  
+[tailwindcss / Adam Wathan on YouTube](https://www.youtube.com/channel/UCy1H38XrN7hi7wHSClfXPqQ/playlists)  
+[tailwindcss on npm](https://www.npmjs.com/package/tailwindcss)

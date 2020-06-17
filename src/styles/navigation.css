@@ -1,0 +1,38 @@
+/* navigation */
+.solarsystem-logo {
+    width: 40px;
+}
+.nav-item {
+    display: none;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+.nav-item:hover:not(.brand-logo) {
+    @apply bg-purple-400;
+}
+.navbar.open .nav-item,
+.brand-logo {
+    display: block;
+}
+.nav-toggle {
+    cursor: pointer;
+    height: 32px;
+    position: absolute;
+    right: 20px;
+    top: 24px;
+    width: 32px;
+}
+
+@media (min-width: 769px) {
+    .nav-toggle {
+        display: none;
+    }
+    .nav-item {
+        display: inline-flex;
+        align-items: center;
+    }
+    .navbar {
+        display: flex;
+        align-items: stretch;
+    }
+}

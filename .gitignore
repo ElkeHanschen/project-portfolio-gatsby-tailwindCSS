@@ -58,6 +58,9 @@ typings/
 .cache/
 public
 
+# tailwindcss files
+tailwind-full.config.js
+
 # Mac files
 .DS_Store
 
