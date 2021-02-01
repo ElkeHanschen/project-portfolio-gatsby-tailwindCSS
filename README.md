@@ -18,7 +18,9 @@
 - clone the project
 - `cd` into the project
 - run `npm install`
-- run `gatsby develop`, this serves the project on localhost
+- run `npm run develop` as first run
+- run `gatsby develop` when already build one time
+  should now run on http://localhost:8000/
 - in case that's not working/throws errors, run `gatsby clean`, `gatsby build`, `gatsby develop`
 
 ### Helpful sources, see end of README
